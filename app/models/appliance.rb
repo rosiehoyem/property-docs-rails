@@ -1,0 +1,15 @@
+class Utility
+	def self.all
+		[
+			"REFRIGERATOR",
+			"KITCHEN STOVE",
+			"MICROWAVE",
+			"DISHWASHER",
+			"TRASH COMPACTER",
+			"CLOTHES WASHER",
+			"CLOTHES DRYER",
+			"WINDOW UNIT AIR CONDITIONER",
+			"GAS GRILL"
+		]
+	end
+end
