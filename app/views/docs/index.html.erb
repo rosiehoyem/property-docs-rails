@@ -1,0 +1,38 @@
+<!-- Begin page content -->
+<div class="container">
+  <div class="page-header">
+    <h1>All Docs</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      <% i = 0 %>
+      <% @folders.each do |folder| %>
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="heading<%= i%>">
+            <h4 class="panel-title">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= i%>" aria-expanded="false" aria-controls="collapse<%= i%>">
+                <%= folder['path'].split('/').last %>
+              </a>
+            </h4>
+          </div>
+          <div id="collapse<%= i%>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<%= i%>">
+            <div class="panel-body">
+              <ul class="nav nav-pills nav-stacked">
+              <% @client.metadata(folder['path'])['contents'].each do |doc| %>
+                <li><%= link_to doc['path'].split('.')[1].gsub("-", " ").capitalize, doc_path(folder: doc['path'].split('/').fourth, file_name: doc['path'].split('/').last) if doc['path'].include?('public.') %></li>
+              <% end %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      <% i = i+1 %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+
+
