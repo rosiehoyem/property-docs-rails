@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @property.address %>
+</p>
+
+<p>
+  <strong>Unit:</strong>
+  <%= @property.unit %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @property.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @property.state %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @property.zip %>
+</p>
+
+<p>
+  <strong>Bedrooms:</strong>
+  <%= @property.bedrooms %>
+</p>
+
+<p>
+  <strong>Bathrooms:</strong>
+  <%= @property.bathrooms %>
+</p>
+
+<p>
+  <strong>Sqft:</strong>
+  <%= @property.sqft %>
+</p>
+
+<p>
+  <strong>Storage:</strong>
+  <%= @property.storage %>
+</p>
+
+<p>
+  <strong>Parking:</strong>
+  <%= @property.parking %>
+</p>
+
+<p>
+  <strong>Included utilities:</strong>
+  <%= @property.included_utilities %>
+</p>
+
+<p>
+  <strong>Not included utilities:</strong>
+  <%= @property.not_included_utilities %>
+</p>
+
+<p>
+  <strong>Appliances:</strong>
+  <%= @property.appliances %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @property.description %>
+</p>
+
+<%= link_to 'Edit', edit_property_path(@property) %> |
+<%= link_to 'Back', properties_path %>

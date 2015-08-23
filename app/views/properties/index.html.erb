@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Properties</h1>
+
+<table class="table table-stripped">
+  <thead>
+    <tr>
+      <th>Address</th>
+      <th>Unit</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Bedrooms</th>
+      <th>Bathrooms</th>
+      <th>Sqft</th>
+      <th>Storage</th>
+      <th>Parking</th>
+      <th>Included utilities</th>
+      <th>Not included utilities</th>
+      <th>Appliances</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @properties.each do |property| %>
+      <tr>
+        <td><%= property.address %></td>
+        <td><%= property.unit %></td>
+        <td><%= property.city %></td>
+        <td><%= property.state %></td>
+        <td><%= property.zip %></td>
+        <td><%= property.bedrooms %></td>
+        <td><%= property.bathrooms %></td>
+        <td><%= property.sqft %></td>
+        <td><%= property.storage %></td>
+        <td><%= property.parking %></td>
+        <td><%= property.included_utilities %></td>
+        <td><%= property.not_included_utilities %></td>
+        <td><%= property.appliances %></td>
+        <td><%= property.description %></td>
+        <td><%= link_to 'Show', property %></td>
+        <td><%= link_to 'Edit', edit_property_path(property) %></td>
+        <td><%= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Property', new_property_path %>

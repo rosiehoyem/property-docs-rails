@@ -1,0 +1,1 @@
+json.extract! @lease, :id, :term_in_months, :start_date, :end_date, :rent, :security_deposit, :storage_fee, :parking_fee, :total_monthly_rent, :pets, :pet_deposit, :first_month_rent_paid, :last_month_rent_paid, :created_at, :updated_at

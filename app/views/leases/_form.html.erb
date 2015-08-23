@@ -1,0 +1,65 @@
+<%= form_for(@lease) do |f| %>
+  <% if @lease.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@lease.errors.count, "error") %> prohibited this lease from being saved:</h2>
+
+      <ul>
+      <% @lease.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :term_in_months %><br>
+    <%= f.text_field :term_in_months %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date %><br>
+    <%= f.date_select :start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :end_date %><br>
+    <%= f.date_select :end_date %>
+  </div>
+  <div class="field">
+    <%= f.label :rent %><br>
+    <%= f.text_field :rent %>
+  </div>
+  <div class="field">
+    <%= f.label :security_deposit %><br>
+    <%= f.text_field :security_deposit %>
+  </div>
+  <div class="field">
+    <%= f.label :storage_fee %><br>
+    <%= f.text_field :storage_fee %>
+  </div>
+  <div class="field">
+    <%= f.label :parking_fee %><br>
+    <%= f.text_field :parking_fee %>
+  </div>
+  <div class="field">
+    <%= f.label :total_monthly_rent %><br>
+    <%= f.text_field :total_monthly_rent %>
+  </div>
+  <div class="field">
+    <%= f.label :pets %><br>
+    <%= f.text_field :pets %>
+  </div>
+  <div class="field">
+    <%= f.label :pet_deposit %><br>
+    <%= f.text_field :pet_deposit %>
+  </div>
+  <div class="field">
+    <%= f.label :first_month_rent_paid %><br>
+    <%= f.text_field :first_month_rent_paid %>
+  </div>
+  <div class="field">
+    <%= f.label :last_month_rent_paid %><br>
+    <%= f.text_field :last_month_rent_paid %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

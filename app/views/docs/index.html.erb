@@ -1,20 +1,18 @@
-<!-- Begin page content -->
-<div class="container">
-  <div class="page-header">
-    <h1>All Docs</h1>
-  </div>
-  <div class="row">
-    <div class="col-md-4">
-      
-      <% @docs.each do |doc| %>
-      <p>
-        <%= link_to doc['path'].split('/').last, doc_path(doc: doc['path'].split('/').fourth, file_name: doc['path'].split('/').last) %>
-      </p>
-      <% end %>
-      </div>
+<div class="page-header">
+  <h1>All Docs</h1>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    
+    <% @docs.each do |doc| %>
+    <p>
+      <%= link_to doc['path'].split('/').last, doc_path(doc: doc['path'].split('/').fourth, file_name: doc['path'].split('/').last) %>
+    </p>
+    <% end %>
     </div>
   </div>
 </div>
+
   
 
 

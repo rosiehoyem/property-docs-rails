@@ -11,10 +11,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150823035435) do
+ActiveRecord::Schema.define(version: 20150823044219) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "leases", force: :cascade do |t|
+    t.string   "term_in_months"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.decimal  "rent"
+    t.decimal  "security_deposit",      precision: 12, scale: 2
+    t.decimal  "storage_fee",           precision: 12, scale: 2
+    t.decimal  "parking_fee",           precision: 12, scale: 2
+    t.decimal  "total_monthly_rent",    precision: 12, scale: 2
+    t.string   "pets"
+    t.decimal  "pet_deposit",           precision: 12, scale: 2
+    t.decimal  "first_month_rent_paid", precision: 12, scale: 2
+    t.decimal  "last_month_rent_paid",  precision: 12, scale: 2
+    t.integer  "tenant_id"
+    t.integer  "property_id"
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
+  end
+
+  create_table "properties", force: :cascade do |t|
+    t.string   "address"
+    t.string   "unit"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "bedrooms"
+    t.string   "bathrooms"
+    t.string   "sqft"
+    t.string   "storage"
+    t.string   "parking"
+    t.string   "included_utilities"
+    t.string   "not_included_utilities"
+    t.string   "appliances"
+    t.text     "description"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "tenants", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

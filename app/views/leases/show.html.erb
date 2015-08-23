@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Term in months:</strong>
+  <%= @lease.term_in_months %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @lease.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @lease.end_date %>
+</p>
+
+<p>
+  <strong>Rent:</strong>
+  <%= @lease.rent %>
+</p>
+
+<p>
+  <strong>Security deposit:</strong>
+  <%= @lease.security_deposit %>
+</p>
+
+<p>
+  <strong>Storage fee:</strong>
+  <%= @lease.storage_fee %>
+</p>
+
+<p>
+  <strong>Parking fee:</strong>
+  <%= @lease.parking_fee %>
+</p>
+
+<p>
+  <strong>Total monthly rent:</strong>
+  <%= @lease.total_monthly_rent %>
+</p>
+
+<p>
+  <strong>Pets:</strong>
+  <%= @lease.pets %>
+</p>
+
+<p>
+  <strong>Pet deposit:</strong>
+  <%= @lease.pet_deposit %>
+</p>
+
+<p>
+  <strong>First month rent paid:</strong>
+  <%= @lease.first_month_rent_paid %>
+</p>
+
+<p>
+  <strong>Last month rent paid:</strong>
+  <%= @lease.last_month_rent_paid %>
+</p>
+
+<%= link_to 'Edit', edit_lease_path(@lease) %> |
+<%= link_to 'Back', leases_path %>
